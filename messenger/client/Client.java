@@ -150,9 +150,7 @@ public class Client extends JFrame {
                 }
             }
         } catch (IOException e) {
-            SwingUtilities.invokeLater(() ->
-                    messageArea.append("Connection lost: " + e.getMessage() + "\n")
-            );
+            SwingUtilities.invokeLater(() -> messageArea.append("Connection lost: " + e.getMessage() + "\n"));
         }
     }
 
@@ -237,7 +235,8 @@ public class Client extends JFrame {
 
                     while (bytesReceived < fileSize) {
                         bytesRead = dataIn.read(buffer);
-                        if (bytesRead == -1) break;
+                        if (bytesRead == -1)
+                            break;
                         fos.write(buffer, 0, bytesRead);
                         bytesReceived += bytesRead;
                     }
@@ -252,9 +251,7 @@ public class Client extends JFrame {
                 }
             }
         } catch (Exception ex) {
-            SwingUtilities.invokeLater(() ->
-                    messageArea.append("File receive error: " + ex.getMessage() + "\n")
-            );
+            SwingUtilities.invokeLater(() -> messageArea.append("File receive error: " + ex.getMessage() + "\n"));
         }
     }
 
