@@ -26,13 +26,13 @@ public class Client extends JFrame {
 
         // Frame setup
         setTitle("Messenger - " + username);
-        setSize(900, 1000); // Increased overall window size
+        setSize(900, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Create components
         messageArea = new JTextArea();
         messageArea.setEditable(false);
-        messageArea.setFont(new Font("Monospaced", Font.PLAIN, 16)); // Larger font
+        messageArea.setFont(new Font("Monospaced", Font.PLAIN, 16));
         messageArea.setLineWrap(true);
         messageArea.setWrapStyleWord(true);
         JScrollPane scrollPane = new JScrollPane(messageArea);
@@ -41,8 +41,8 @@ public class Client extends JFrame {
         // Ensure scroll pane takes up more space
         scrollPane.setPreferredSize(new Dimension(800, 700));
 
-        inputField = new JTextField(50); // Wider input field
-        toField = new JTextField(30);   // Wider to field
+        inputField = new JTextField(50);
+        toField = new JTextField(30);
 
         JButton sendButton = new JButton("Send");
         sendButton.setBackground(new Color(100, 200, 100));
