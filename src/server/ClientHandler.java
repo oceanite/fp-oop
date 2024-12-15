@@ -1,4 +1,4 @@
-package messenger.server;
+package src.server;
 
 import java.io.*;
 import java.net.*;
@@ -82,7 +82,8 @@ class ClientHandler implements Runnable {
 
             while (bytesTransferred < fileSize) {
                 bytesRead = dataIn.read(buffer);
-                if (bytesRead == -1) break;
+                if (bytesRead == -1)
+                    break;
                 recipientClient.dataOut.write(buffer, 0, bytesRead);
                 bytesTransferred += bytesRead;
             }
@@ -107,11 +108,16 @@ class ClientHandler implements Runnable {
     public void closeEverything() {
         Server.removeClient(username);
         try {
-            if (in != null) in.close();
-            if (out != null) out.close();
-            if (dataIn != null) dataIn.close();
-            if (dataOut != null) dataOut.close();
-            if (socket != null) socket.close();
+            if (in != null)
+                in.close();
+            if (out != null)
+                out.close();
+            if (dataIn != null)
+                dataIn.close();
+            if (dataOut != null)
+                dataOut.close();
+            if (socket != null)
+                socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

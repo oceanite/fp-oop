@@ -1,4 +1,4 @@
-package messenger.client;
+package src.client;
 
 import javax.swing.*;
 import java.awt.*;
